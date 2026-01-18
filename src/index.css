@@ -1,32 +1,60 @@
-/* src/index.css */
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Configuración base para que se vea profesional */
 @layer base {
   html {
     font-family: 'Plus Jakarta Sans', sans-serif;
     scroll-behavior: smooth;
   }
-  
   body {
-    @apply bg-slate-950 text-slate-200 antialiased;
+    @apply bg-slate-950 text-slate-200 antialiased overflow-x-hidden;
   }
 }
 
 @layer utilities {
   .bg-grid-pattern {
-    background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
-                      linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-image: linear-gradient(to right, rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    /* Simplificamos la máscara para rendimiento */
     mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 100%);
   }
   
-  .text-glow {
-    text-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+  .glass-card {
+    /* Reducimos el blur de xl a md para rendimiento */
+    @apply bg-slate-900/60 backdrop-blur-md border border-white/5 shadow-xl;
   }
+
+  /* Hardware Acceleration Class */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+  }
+}
+
+/* Optimizamos la animación blob para que use transform y no top/left */
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 10s infinite; /* Más lento para consumir menos recursos */
+  will-change: transform;
+}
+.animation-delay-2000 { animation-delay: 2s; }
+
+@keyframes gradient-xy {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+.animate-gradient-xy {
+  background-size: 200% 200%;
+  animation: gradient-xy 6s ease infinite;
+  will-change: background-position;
 }
