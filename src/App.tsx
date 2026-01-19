@@ -12,7 +12,7 @@ const PageLoader = () => (
 // Lazy Loading: Solo carga el código cuando se necesita
 const Home = lazy(() => import('./pages/Home').then(module => ({ default: module.Home })));
 const ServicesPage = lazy(() => import('./pages/Services').then(module => ({ default: module.ServicesPage })));
-const PortfolioPage = lazy(() => import('./pages/Portfolio').then(module => ({ default: module.PortfolioPage })));
+const PortfolioPage = lazy(() => import('./pages/Projects').then(module => ({ default: module.PortfolioPage })));
 const ContactPage = lazy(() => import('./pages/Contact').then(module => ({ default: module.ContactPage })));
 
 function App() {

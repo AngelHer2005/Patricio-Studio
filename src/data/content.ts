@@ -7,7 +7,9 @@ import {
   Cloud, 
   ShieldCheck, 
   Zap, 
-  Search, 
+  Search,
+  Monitor,
+  ShoppingBag, 
   Rocket 
 } from 'lucide-react';
 
@@ -20,28 +22,28 @@ export const navigation = [
 
 export const services = [
   {
-    title: 'Sitios Web Corporativos',
-    description: 'Tu carta de presentación digital. Diseño moderno, adaptado a móviles y optimizado para SEO. Ideal para empresas que buscan credibilidad.',
-    features: ['Diseño Responsivo (Mobile First)', 'Optimización SEO Básica', 'Integración con WhatsApp/Redes'],
-    icon: Layout,
+    title: 'Páginas Web Corporativas',
+    description: 'Ideal para empresas que buscan posicionamiento. Muestra tus servicios, historia y galería con un diseño elegante que genera confianza inmediata.',
+    features: ['Hasta 5 Secciones Internas', 'Integración con Google Maps', 'Formulario de Contacto', 'Enlaces a Redes Sociales'],
+    icon: Monitor, // Icono de Monitor
+  },
+  {
+    title: 'Tiendas Virtuales (E-commerce)',
+    description: 'Vende tus productos las 24/7. Sistema completo con carrito de compras, pasarela de pagos (Visa/Niubiz/Yape) y panel para gestionar pedidos.',
+    features: ['Catálogo Ilimitado', 'Pasarela de Pagos Segura', 'Gestión de Inventario', 'Panel de Administración'],
+    icon: ShoppingBag, // Icono de Bolsa de Compras
+  },
+  {
+    title: 'Landing Pages (Publicidad)',
+    description: 'Páginas de aterrizaje diseñadas específicamente para campañas de Facebook o Google Ads. Optimizadas para convertir visitantes en leads.',
+    features: ['Diseño de Una Sola Página', 'Llamadas a la Acción Claras', 'Carga Ultra Rápida', 'Botón Flotante de WhatsApp'],
+    icon: Rocket, // Icono de Cohete
   },
   {
     title: 'Sistemas Web a Medida',
-    description: 'Más que una web informativa. Desarrollo plataformas funcionales (Dashboards, Intranets) con gestión de datos robusta usando MySQL.',
-    features: ['Base de Datos MySQL (90% Opt.)', 'Paneles Administrativos', 'Seguridad Avanzada'],
-    icon: Database,
-  },
-  {
-    title: 'Landing Pages de Conversión',
-    description: 'Páginas únicas diseñadas específicamente para vender un producto o captar clientes (Leads). Velocidad de carga instantánea.',
-    features: ['Copywriting Persuasivo', 'Carga Ultra-rápida (Vite)', 'Formularios de Contacto'],
-    icon: Rocket,
-  },
-  {
-    title: 'Infraestructura & Hosting',
-    description: 'No te preocupes por caídas. Despliego tu web utilizando tecnologías Cloud modernas para garantizar disponibilidad 24/7.',
-    features: ['Certificados SSL (Candado Seguro)', 'Hosting en AWS/Vercel', 'Dominios Personalizados'],
-    icon: Cloud,
+    description: '¿Necesitas algo más complejo? Intranets, sistemas de gestión, aulas virtuales o plataformas SaaS desarrolladas desde cero con React y Node.js.',
+    features: ['Base de Datos Personalizada', 'Roles de Usuario (Admin/Cliente)', 'Reportes y Dashboards', 'Seguridad Avanzada'],
+    icon: Database, // Icono de Base de Datos
   }
 ];
 
@@ -97,3 +99,68 @@ export const techStack = [
   { name: 'AWS Cloud', icon: Cloud },    
   { name: 'Seguridad', icon: ShieldCheck }, 
 ];
+
+export const pricing = [
+  {
+    name: 'Plan Emprendedor',
+    price: 'S/ 500', // Ajusta a tu moneda si no es Soles
+    description: 'Ideal para profesionales y pequeños negocios que necesitan presencia digital rápida.',
+    features: [
+      'Landing Page (1 Página)',
+      'Diseño Responsivo (Móvil/PC)',
+      'Formulario de Contacto',
+      'Enlace a WhatsApp',
+      'Hosting Gratis (1 año)',
+      'Entrega en 3 días'
+    ],
+    highlight: false
+  },
+  {
+    name: 'Plan Corporativo',
+    price: 'S/ 950',
+    description: 'Sitio web multipágina para empresas que buscan posicionamiento y autoridad.',
+    features: [
+      'Sitio Web Completo (Hasta 5 pág)',
+      'Panel Administrable',
+      'Optimización SEO Básica',
+      'Integración con Google Maps',
+      'Correo Corporativo',
+      'Soporte Técnico (1 mes)'
+    ],
+    highlight: true // Este será el recomendado
+  },
+  {
+    name: 'Tienda Virtual',
+    price: 'S/ 1800',
+    description: 'Vende tus productos online con pasarela de pagos y gestión de inventario.',
+    features: [
+      'Catálogo de Productos',
+      'Pasarela de Pagos (Visa/Yape)',
+      'Carrito de Compras',
+      'Panel de Ventas',
+      'Gestión de Stock',
+      'Capacitación de uso'
+    ],
+    highlight: false
+  }
+];
+
+export const faqs = [
+  {
+    question: "¿Incluye Hosting y Dominio?",
+    answer: "Sí, todos nuestros planes incluyen el primer año de hosting de alta velocidad y un dominio .com o .pe gratuito."
+  },
+  {
+    question: "¿El pago es único o mensual?",
+    answer: "El pago por el diseño es único. Solo deberás renovar el hosting y dominio anualmente (aprox. S/ 300 al año) después del primer año."
+  },
+  {
+    question: "¿Puedo administrar mi propia web?",
+    answer: "Absolutamente. En los planes Corporativo y Tienda, te entregamos un panel de control para que cambies textos y fotos sin saber programar."
+  },
+  {
+    question: "¿Cuánto tiempo tardan?",
+    answer: "Dependiendo del plan, entregamos entre 3 a 10 días hábiles, siempre que tengamos toda la información de tu parte."
+  }
+];
+
